@@ -12,7 +12,7 @@ def rest_event(_energy: int) -> int:
 
 
 def order_event(_coins: int) -> int:
-    if energy > 30:
+    if energy >= 30:
         globals().update(energy=energy - 30)
         print(f'You earned {_coins} coins.')
         new_coins = coins + _coins
@@ -24,7 +24,7 @@ def order_event(_coins: int) -> int:
 
 
 def ingredient_purchase(_ingredient: str, _price: int) -> Exception or None:
-    if coins > _price:
+    if coins >= _price:
         globals().update(coins=coins - _price)
         print(f'You bought {_ingredient}.')
     else:
